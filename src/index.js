@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/common/Header';
-import './index.css'
+import './index.css';
+import List from './components/list/List';
 
-const App = ()=>{
+const App = () => {
     return (
-    <div className="body">
-        <Header/>
-        <h1> React Coin </h1>
-        <p> Up to date crypto currencies financial data </p>
-    </div>    
+        <div>
+            <Header />
+            <List />
+        </div>
     )
 }
 
 ReactDOM.render(
-    <App/>,
+    <App />,
     document.getElementById('root')
 )
