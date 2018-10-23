@@ -1,7 +1,8 @@
 {
   "name": "react-coin",
   "version": "1.0.0",
-  "private": true,
+  "private": true,  
+  "homepage": "https://miilla.github.io/react-coin/",
   "devDependencies": {
     "react-scripts": "1.1.0"
   },
