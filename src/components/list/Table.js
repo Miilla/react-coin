@@ -1,11 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import PropsTypes from 'prop-types';
 import './Table.css';
 
 const Table = (props) => {
-    const { currencies, _renderChangeProcent} = props;
+    const { currencies, _renderChangeProcent, history } = props;
 
-    return(
+    return (
         <div className="Table-container">
             <table className="Table">
                 <thead className="Table-head">
@@ -18,7 +19,7 @@ const Table = (props) => {
                 </thead>
                 <tbody className="Table-body">
                     {currencies.map((currency) => (
-                        <tr key={currency.id}>
+                        <tr key={currency.id} onClick={() => history.push(`/currency/${currency.id}`)}>
                             <td>
                                 <span className="Table-rank">{currency.rank}</span>
                                 {currency.name}
@@ -37,7 +38,7 @@ const Table = (props) => {
                         </tr>
                     ))}
                 </tbody>
-                </table>
+            </table>
         </div>
     )
 }
@@ -45,6 +46,7 @@ const Table = (props) => {
 Table.propsTypes = {
     currencies: PropsTypes.array.isRequired,
     _renderChangeProcent: PropsTypes.func.isRequired,
+    history: PropsTypes.object.isRequired
 }
 
-export default Table;
+export default withRouter(Table);
